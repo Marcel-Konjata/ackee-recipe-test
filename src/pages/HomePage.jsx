@@ -1,11 +1,15 @@
 import React from 'react'
-import { GetRecipes } from '../API/api'
+import {connect} from 'react-redux';
+import PropTypes from "prop-types";
 
-const HomePage = () => {
+import {getRecipesStart} from "../redux-files/cook book/cookBook.actions"
+
+
+const HomePage = ({getRecipesStart, cookBook}) => {
 
     React.useEffect(() => {
-        GetRecipes()
-    
+        getRecipesStart()
+        
     }, [])
 
     return (
@@ -15,4 +19,18 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+HomePage.propTypes = {
+  cookBook: PropTypes.object,
+  getRecipesStart: PropTypes.func
+}
+
+const mapStateToProps = ({cookBook}) => ({
+    cookBook
+})
+
+const mapDispatchToProps = {
+    getRecipesStart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+

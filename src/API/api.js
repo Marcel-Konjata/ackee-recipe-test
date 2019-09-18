@@ -1,12 +1,15 @@
-import Axios from 'axios';
+import Axios from "axios";
 
-const BASE_URL = "https://private-anon-cd4b0b73af-cookbook3.apiary-mock.com/api/v1/recipes"
+const BASE_URL =
+    "https://private-anon-cd4b0b73af-cookbook3.apiary-mock.com/api/v1/recipes";
 
+const limitQuery = "?limit="
 
- export function GetRecipes() {
-    (async()=>{
-        const response = await Axios.get(`${BASE_URL}`);
-        const recipes = response.data;
-        console.log(recipes)
-    })()
+export function GetRecipes() {
+    return Axios.get(`${BASE_URL}${limitQuery}10`);
 }
+
+export function GetSingleRecipe(recipeID){
+    return  Axios.get(`${BASE_URL}/${recipeID}`);
+}
+
