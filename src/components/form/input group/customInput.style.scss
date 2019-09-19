@@ -1,6 +1,13 @@
+@import "./../../../variablesStyles.scss";
+
+
 .custom-input{
+    &:not(:last-of-type){
+        margin-bottom: 30px; 
+    }
     input{
         display: block;
+        width: 100%;
         border: none;
         border-bottom: 2px solid grey;
         font-size: 1.6rem;
@@ -8,6 +15,13 @@
             outline: none;
             box-shadow: none;
         }
+        &.filled{
+            border-bottom: 2px solid $ackee-blue;
+        }
+        
+    }
+    input:invalid{
+        box-shadow: none;
     }
     label {
         display: block;

@@ -8,7 +8,8 @@ const {
     GET_RECIPES_FAIL,
     GET_SINGLE_RECIPE_FAIL,
     GET_SINGLE_RECIPE_START,
-    GET_SINGLE_RECIPE_SUCCESS
+    GET_SINGLE_RECIPE_SUCCESS,
+    
 } = ActionTypes;
 
 function* getRecipesSaga() {
@@ -28,10 +29,14 @@ function* singleRecipeSaga(action) {
     const response = yield call(GetSingleRecipe, id);
     const data = yield response.data;
     yield put({ type: GET_SINGLE_RECIPE_SUCCESS, payload: data });
+    console.log(id)
   }catch(error){
     yield put({ type: GET_SINGLE_RECIPE_FAIL, payload: error });
   }
 }
+
+
+
 
 function* getSingleRecipeWatcher() {
     yield takeLatest(GET_SINGLE_RECIPE_START, singleRecipeSaga );
@@ -40,6 +45,8 @@ function* getSingleRecipeWatcher() {
 function* getRecipesWatcher() {
     yield takeLatest(GET_RECIPES_START, getRecipesSaga);
 }
+
+
 
 const cookBookSagas = [fork(getRecipesWatcher), fork(getSingleRecipeWatcher)];
 

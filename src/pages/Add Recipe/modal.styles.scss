@@ -1,0 +1,53 @@
+.modal-popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 6;
+    background: rgba(0, 0, 0, 0.774);
+}
+
+.modal-CTA{
+    position: absolute;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.753);
+    min-width: 250px;    
+    width: 80%;
+    border-radius: 5px;
+}
+.modal-message{
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 500;
+    a{
+        display: block;
+        color: white;
+        border: 2px solid white;
+        padding: 15px ;
+        background: blue;
+        max-width: 150px;
+        border-radius: 10px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+    .modal-addBTN{
+        background: blueviolet;
+        display: block;
+        border: 2px solid white;
+        color:white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+}

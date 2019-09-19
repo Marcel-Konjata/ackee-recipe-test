@@ -49,11 +49,11 @@
     &-ingredients{
         font-size: 1.5rem;
         &--list{
-            list-style: dot;
+            list-style: disc;
            padding: 0 30px;
            li{
                &:not(:first-child){
-                   margin-top: 5px;
+                   margin-top: 12px;
                }
                font-size: 1rem;
                color: $ackee-blue;
