@@ -1,0 +1,67 @@
+@import "../../variablesStyles.scss";
+
+.recipe-headline{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0.425)), url("./../../resources/img/recept.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2{
+        padding: 20px 40px;
+        color: white;
+        font-size: 2.3rem;
+        margin-top: auto;
+    }
+    &--rating{
+        background-color: $ackee-purple;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        color: white;
+        align-items: center;
+    }
+
+}
+
+
+.recipe{
+    &-body{
+        padding: 25px;
+    }
+    &-section{
+        padding: 10px 0;
+        &--heading{
+            color: $ackee-blue;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &-info{
+        margin-bottom: 20px; 
+    }
+    &-ingredients{
+        font-size: 1.5rem;
+        &--list{
+            list-style: dot;
+           padding: 0 30px;
+           li{
+               &:not(:first-child){
+                   margin-top: 5px;
+               }
+               font-size: 1rem;
+               color: $ackee-blue;
+           }
+           span{
+               font-size: 1.5rem;
+               color: black;
+           }
+        }
+    }
+}

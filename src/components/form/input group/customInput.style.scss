@@ -1,0 +1,28 @@
+.custom-input{
+    input{
+        display: block;
+        border: none;
+        border-bottom: 2px solid grey;
+        font-size: 1.6rem;
+        &:focus{
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    label {
+        display: block;
+        transform: translateY(-100%);
+        pointer-events: none;
+        transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    input:focus + label {
+        transform: translate(-10%,-200%) scale(.8);
+        
+    }
+    .active{
+        
+        
+        transform: translate(-10%,-200%) scale(.8);
+    }
+}

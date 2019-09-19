@@ -4,6 +4,9 @@ const {
     GET_RECIPES_FAIL,
     GET_RECIPES_START,
     GET_RECIPES_SUCCESS,
+    GET_SINGLE_RECIPE_FAIL,
+    GET_SINGLE_RECIPE_START,
+    GET_SINGLE_RECIPE_SUCCESS,
     PUT_RECIPES_FAIL,
     PUT_RECIPES_START,
     PUT_RECIPES_SUCCESS
@@ -19,6 +22,18 @@ export const getRecipesFailure = payload => ({
 });
 export const getRecipesStart = payload => ({
     type: GET_RECIPES_START,
+    payload
+});
+export const getSingleRecipeSucces = payload => ({
+    type: GET_SINGLE_RECIPE_SUCCESS,
+    payload
+});
+export const getSingleRecipeFailure = payload => ({
+    type: GET_SINGLE_RECIPE_FAIL,
+    payload
+});
+export const getSingleRecipeStart = payload => ({
+    type: GET_SINGLE_RECIPE_START,
     payload
 });
 
