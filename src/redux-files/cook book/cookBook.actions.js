@@ -9,7 +9,10 @@ const {
     GET_SINGLE_RECIPE_SUCCESS,
     PUT_RECIPES_FAIL,
     PUT_RECIPES_START,
-    PUT_RECIPES_SUCCESS
+    PUT_RECIPES_SUCCESS,
+    SET_RECIPE_RATING_FAIL,
+    SET_RECIPE_RATING_SUCCES,
+    SET_RECIPE_RATING_START
 } = ActionTypes;
 
 export const getRecipesSucces = payload => ({
@@ -48,4 +51,17 @@ export const putRecipesFailure = payload => ({
 export const putRecipesStart = payload => ({
     type: PUT_RECIPES_START,
     payload
+});
+
+export const setRecipeRatingStart = (score, recipeId) => ({
+    type: SET_RECIPE_RATING_START,
+    payload: { score, recipeId }
+});
+export const setRecipeRatingSucces = (recipeId) => ({
+    type: SET_RECIPE_RATING_SUCCES,
+    payload: recipeId
+});
+export const setRecipeRatingFail = error => ({
+    type: SET_RECIPE_RATING_FAIL,
+    payload: error
 });

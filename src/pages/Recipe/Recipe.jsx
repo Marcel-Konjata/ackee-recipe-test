@@ -5,6 +5,8 @@ import { MdAccessTime } from "react-icons/md";
 import StarRatingDipslay from "../../components/Stars/StarRatingDipslay";
 import { getSingleRecipeStart } from "../../redux-files/cook book/cookBook.actions";
 import "./recipe.style.scss";
+import UserRating from "../../components/User Rating/UserRating";
+import LoadingComponent from "../../components/loading/LoadingComponent";
 
 const Recipe = ({ singleRecipe, error, id, getSingleRecipeStart}) => {
   
@@ -17,12 +19,13 @@ const Recipe = ({ singleRecipe, error, id, getSingleRecipeStart}) => {
 
     return singleRecipe ? (
         <>
+        
         <header className="recipe-headline">
             <Navigation returnIcon color="white" />
             <h2>"{singleRecipe.name}"</h2>
             <div className="recipe-headline--rating">
                 {/* <StarRatingDipslay score={singleRecipe.score} /> */}
-                <StarRatingDipslay score={5} color="white" scale={1.4} width={20}/>
+                <StarRatingDipslay score={singleRecipe.score} color="white" scale={1.4} width={20}/>
                 <div className="time">
                     <MdAccessTime />
                     <span>{singleRecipe.duration}</span> <span>min</span>
@@ -52,10 +55,10 @@ const Recipe = ({ singleRecipe, error, id, getSingleRecipeStart}) => {
             </section>
         </main>
         <footer>
-            RATING
+            <UserRating recipeId={id}/>
         </footer>
         </>
-    ) : null;
+    ) : error? "something fucked up": <LoadingComponent />;
 };
 
 const mapStateToProps = ({ cookBook }, otherProps) => ({

@@ -1,0 +1,29 @@
+.user-rating {
+    background: blue;
+    color: white;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    h4{
+        text-align: center;
+    }
+    &--stars {
+        display: flex;
+        justify-content: center;
+        svg {
+            opacity: 0.5;
+            transition: all 0.3s 0.2s ease-out;
+            transform: scale(1.5);
+            margin: 10px;
+            cursor: pointer;
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}

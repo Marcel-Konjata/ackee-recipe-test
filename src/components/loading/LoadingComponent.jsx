@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
+import React  from "react";
+import "./loading.style.scss";
 
-export default class LoadingComponent extends Component {
-    render() {
-        return (
-            <div>
-                loading
-            </div>
-        )
-    }
-}
+const LoadingComponent = () => {
+    return <div className="loader">Loading...</div>;
+};
+
+export default LoadingComponent;
